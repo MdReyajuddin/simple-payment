@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .paytm import Checksum
 from decimal import *
 
-MERCHANT_KEY= 'QBto&17QqF1Em1gQ'
+MERCHANT_KEY= 'YOUR_MERCHANT_KEY'
 # Create your views here.
 
 
@@ -109,10 +109,10 @@ def process_payment(request):
     # return render(request, 'ecommerce_app/process_payment.html', {'order': order, 'form': form})
     param_dict = {
 
-        'MID': 'fAwVcZ17670747402537',
+        'MID': 'YOUR_MERCHANT_ID',
         'ORDER_ID': str(order.id),
         'TXN_AMOUNT': '%.2f' % order.total_cost().quantize(Decimal('.01')),
-        'CUST_ID': 'reyajurs@gmail.com',
+        'CUST_ID': 'YOUR_EMAIL_ID',
         'INDUSTRY_TYPE_ID': 'Retail',
         'WEBSITE': 'WEBSTAGING',
         'CHANNEL_ID': 'WEB',
